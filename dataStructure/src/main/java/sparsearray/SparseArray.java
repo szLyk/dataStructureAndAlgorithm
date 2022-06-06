@@ -19,7 +19,8 @@ public class SparseArray {
         }
 
         int length = chessArr1.length;
-        System.out.println(length);
+        int high = chessArr1[0].length;
+        System.out.println(length+"  "+high);
 
     }
 }
