@@ -18,9 +18,41 @@ public class SparseArray {
             System.out.println();
         }
 
-        int length = chessArr1.length;
-        int high = chessArr1[0].length;
-        System.out.println(length+"  "+high);
+        int high = chessArr1.length;
+        int length = chessArr1[0].length;
+
+        int count = 0;
+
+        for (int i = 0; i < high; i++) {
+
+            for (int j = 0; j < length; j++) {
+                int i1 = chessArr1[i][j];
+
+                if (i1 != 0){
+                    count ++;
+                }
+            }
+        }
+
+
+
+        int[][] ints = new int[count][2];
+        ints[0][0] = high;
+        ints[0][1] = length;
+        ints[0][2] = count;
+
+
+        for (int i = 0; i < high; i++) {
+
+            for (int j = 0; j < length; j++) {
+                int i1 = chessArr1[i][j];
+
+                if (i1 != 0){
+
+                }
+            }
+        }
+
 
     }
 }
