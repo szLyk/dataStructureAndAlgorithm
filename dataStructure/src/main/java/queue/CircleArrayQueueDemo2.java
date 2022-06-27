@@ -13,9 +13,8 @@ public class CircleArrayQueueDemo2 {
         arrayQueueDemo.addCircleArrayQueue(4);
         arrayQueueDemo.addCircleArrayQueue(5);
         arrayQueueDemo.addCircleArrayQueue(6);
-        int i = arrayQueueDemo.takeCircleArrayQueue();
-        int i1 = arrayQueueDemo.takeCircleArrayQueue();
-//        System.out.println(i1);
+        arrayQueueDemo.takeCircleArrayQueue();
+        arrayQueueDemo.takeCircleArrayQueue();
         arrayQueueDemo.addCircleArrayQueue(7);
         arrayQueueDemo.addCircleArrayQueue(8);
         arrayQueueDemo.addCircleArrayQueue(9);
@@ -24,6 +23,9 @@ public class CircleArrayQueueDemo2 {
         System.out.println();
         arrayQueueDemo.show();
         arrayQueueDemo.addCircleArrayQueue(10);
+        arrayQueueDemo.takeCircleArrayQueue();
+        System.out.println();
+        arrayQueueDemo.show();
 
     }
 
