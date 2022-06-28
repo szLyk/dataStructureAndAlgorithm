@@ -3,6 +3,32 @@ package linkedlist;
 public class DoubleLinkedListDemo {
 
     public static void main(String[] args) {
+        // 测试
+        System.out.println("双向链表的测试");
+        // 先创建节点
+        HeroNode2 hero1 = new HeroNode2(1, "宋江", "及时雨");
+        HeroNode2 hero2 = new HeroNode2(2, "卢俊义", "玉麒麟");
+        HeroNode2 hero3 = new HeroNode2(3, "吴用", "智多星");
+        HeroNode2 hero4 = new HeroNode2(4, "林冲", "豹子头");
+        // 创建一个双向链表
+        DoubleLinkedList doubleLinkedList = new DoubleLinkedList();
+        doubleLinkedList.add(hero1);
+        doubleLinkedList.add(hero2);
+        doubleLinkedList.add(hero3);
+        doubleLinkedList.add(hero4);
+
+        doubleLinkedList.list();
+
+        // 修改
+        HeroNode2 newHeroNode = new HeroNode2(4, "公孙胜", "入云龙");
+        doubleLinkedList.update(newHeroNode);
+        System.out.println("修改后的链表情况");
+        doubleLinkedList.list();
+
+        // 删除
+        doubleLinkedList.delete(3);
+        System.out.println("删除后的链表情况~~");
+        doubleLinkedList.list();
 
     }
 
@@ -124,6 +150,30 @@ class DoubleLinkedList {
 
     }
 
+    // 遍历双向链表的方法
+    // 显示链表[遍历]
+    public void list() {
+
+
+        // 判断链表是否为空
+        if (head.next == null) {
+            System.out.println("链表为空");
+            return;
+        }
+        // 因为头节点，不能动，因此我们需要一个辅助变量来遍历
+        HeroNode2 temp = head.next;
+        while (true) {
+            // 判断是否到链表最后
+            if (temp == null) {
+                break;
+            }
+            // 输出节点的信息
+            System.out.println(temp);
+            // 将temp后移， 一定小心
+            temp = temp.next;
+        }
+    }
+
 
 }
 
@@ -148,5 +198,8 @@ class HeroNode2 {
     public String toString() {
         return "HeroNode [no=" + no + ", name=" + name + ", nickname=" + nickname + "]";
     }
+
+
+
 
 }

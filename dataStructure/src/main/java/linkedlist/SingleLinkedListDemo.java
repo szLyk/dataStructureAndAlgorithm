@@ -29,6 +29,10 @@ public class SingleLinkedListDemo {
         singleLinkedList.update(hero5);
         singleLinkedList.list();
 
+        singleLinkedList.reserve();
+        System.out.println();
+        singleLinkedList.list();
+
     }
 
 
@@ -225,6 +229,32 @@ class SingleLinkedList {
     }
 
 
+
+
+
+    public void reserve(){
+        HeroNode reverseHead = new HeroNode(0, "", "");
+        HeroNode temp;
+        if (head.next == null){
+            System.out.println("链表为空！");
+            return;
+        }
+        temp = head.next;
+        //如果链表只有一个，则直接返回
+        if (temp.next == null){
+            return;
+        }
+        HeroNode next ;
+        while (temp != null){
+            next = temp.next;
+            temp.next = reverseHead.next;
+            reverseHead.next  = temp;
+            temp = next;
+        }
+        head.next = reverseHead.next;
+    }
+
+
 }
 
 
@@ -245,7 +275,13 @@ class HeroNode {
     //为了显示方法，我们重新toString
     @Override
     public String toString() {
-        return "HeroNode [no=" + no + ", name=" + name + ", nickname=" + nickname + "]";
+
+        if (next == null){
+            return "HeroNode [no=" + no + ", name=" + name + ", nickname=" + nickname + ", next.no="+null+"]";
+        }else {
+            return "HeroNode [no=" + no + ", name=" + name + ", nickname=" + nickname + ", next.no="+next.no+"]";
+        }
+
     }
 
 
