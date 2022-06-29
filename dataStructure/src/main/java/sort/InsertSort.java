@@ -9,8 +9,8 @@ public class InsertSort {
     public static void main(String[] args) {
 
 
-        int[] ints = new int[]{4,2,3,1};
-        sort1(ints);
+        int[] ints = new int[]{4, 2, 3, 1};
+        sort2(ints);
         System.out.println(Arrays.toString(ints));
 
 //        int[] arr = new int[80000];
@@ -117,52 +117,23 @@ public class InsertSort {
         }
     }
 
-    public static void sort2(int[] ints){
-
-        int indexValue = 0;
+    public static void sort2(int[] ints) {
+        int temp = 0;
         int j = 0;
 
-        //第一、二个数
-
         for (int i = 1; i < ints.length; i++) {
+            temp = ints[i];
 
-            indexValue = ints[i];
-
-
-            for (j = i-1;j>=0;j--){
-
-                if (indexValue<ints[j]){
-                    ints[i] = ints[j];
-                }else {
+            for (j = i - 1; j >= 0; j--) {
+                if (ints[j] > temp) {
+                    ints[j + 1] = ints[j];
+                } else {
                     break;
                 }
-
             }
 
-            ints[j+1] = indexValue;
-
+            ints[j + 1] = temp;
         }
-
-
-//        for (int i = 1; i < ints.length; i++) {
-//            indexValue =  ints[1];
-//
-//            if (indexValue<ints[0]){
-//                ints[1] = ints[0];
-//            }
-//
-//            ints[0] = indexValue;
-//
-//
-//            indexValue = ints[2];
-//
-//            if (indexValue < ints[1]){
-//                ints[2] = ints[1];
-//            }
-//
-//            ints[1] = indexValue;
-//
-//        }
     }
 
 }

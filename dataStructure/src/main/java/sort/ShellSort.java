@@ -7,26 +7,26 @@ import java.util.Date;
 public class ShellSort {
 
     public static void main(String[] args) {
-//        int[] ints = new int[]{99, 8, 6, 9, 88, 22, 7, 3, 2, 1, -22};
-//        sort(ints);
-//        System.out.println(Arrays.toString(ints));
+        int[] ints = new int[]{8, 9, 1, 7, 2, 3, 5, 4, 6, 0};
+        sort(ints);
+        System.out.println(Arrays.toString(ints));
 
-        int[] arr = new int[80000];
-        for (int i = 0; i < 80000; i++) {
-            arr[i] = (int) (Math.random() * 8000000); //生成一个[0, 8000000) 数
-        }
-
-        Date data1 = new Date();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String date1Str = simpleDateFormat.format(data1);
-        System.out.println("排序前的时间是=" + date1Str);
-
-        sort(arr);
-
-
-        Date data2 = new Date();
-        String date2Str = simpleDateFormat.format(data2);
-        System.out.println("排序后的时间是=" + date2Str);
+//        int[] arr = new int[80000];
+//        for (int i = 0; i < 80000; i++) {
+//            arr[i] = (int) (Math.random() * 8000000); //生成一个[0, 8000000) 数
+//        }
+//
+//        Date data1 = new Date();
+//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        String date1Str = simpleDateFormat.format(data1);
+//        System.out.println("排序前的时间是=" + date1Str);
+//
+//        sort(arr);
+//
+//
+//        Date data2 = new Date();
+//        String date2Str = simpleDateFormat.format(data2);
+//        System.out.println("排序后的时间是=" + date2Str);
     }
 
     public static void sort(int[] ints) {
@@ -50,7 +50,6 @@ public class ShellSort {
 //            ints[2] = ints[step+2];
 //            ints[step+2] = temp;
 //        }
-
 
 
 //        for (int i = 0;i<=step;i++){
@@ -85,55 +84,58 @@ public class ShellSort {
 //            }
 //        }
 
-        int temp = 0;
-        for (int j = ints.length/2;j>0;j/=2){
-            for (int i = 0;i<=j;i++){
-                temp = ints[i];
-                if (ints[j+i] < ints[i]){
-                    ints[i] = ints[j+i];
-                    ints[j+i] = temp;
-                }
-            }
-        }
-
-
-        int indexValue = 0;
-        int j = 0;
-
-        //第一、二个数
-
-//        for (int i = 1; i < ints.length; i++) {
-//
-//            indexValue = ints[i];
-//
-//
-//            for (j = i-1;j>=0;j--){
-//
-//                if (indexValue<ints[j]){
-//                    ints[i] = ints[j];
-//                }else {
-//                    break;
+        // 增量gap, 并逐步地缩小增量
+//        for (int gap = arr.length / 2; gap > 0; gap /= 2) {
+//            // 从第gap个元素，逐个对其所在的组进行直接插入排序
+//            for (int i = gap; i < arr.length; i++) {
+//                int j = i;
+//                int temp = arr[j];
+//                if (arr[j] < arr[j - gap]) {
+//                    while (j - gap >= 0 && temp < arr[j - gap]) {
+//                        //移动
+//                        arr[j] = arr[j - gap];
+//                        j -= gap;
+//                    }
+//                    //当退出while后，就给temp找到插入的位置
+//                    arr[j] = temp;
 //                }
 //
 //            }
-//
-//            ints[j+1] = indexValue;
-//
 //        }
 
+        int temp = 0;
 
-//        temp = ints[1];
-//        if (temp<ints[0]){
-//            ints[0] = ints[1];
-//        }
-//        temp = ints[2];
-//        if (temp<ints[1]){
-//            ints[2] = ints[1];
-//        }
-//        if (temp<ints[1]){
-//            ints[1] = ints[0];
-//        }
-//        ints[0] = temp;
+        int a = 11 / 2;
+
+
+        for (int i = 5; i < ints.length; i++) {
+
+            for (int j = i - 5; j >= 0; j -= 5) {
+
+                if (ints[j] > ints[j + 5]) {
+                    temp = ints[j];
+                    ints[j] = ints[j + 5];
+                    ints[j + 5] = temp;
+                }
+
+            }
+        }
+
+        System.out.println(Arrays.toString(ints));
+
+        int b = (11 / 2) / 2;
+
+        for (int i = 2; i < ints.length; i++) {
+
+            for (int j = i -2; j >= 0; j -= 2) {
+                if (ints[j] > ints[j + 2]) {
+                    temp = ints[j];
+                    ints[j] = ints[j + 2];
+                    ints[j + 2] = temp;
+                }
+
+            }
+        }
 
 
     }
