@@ -103,39 +103,43 @@ public class ShellSort {
 //            }
 //        }
 
-        int temp = 0;
 
-        int a = 11 / 2;
+//        int temp = 0;
+//
+//        int a = 11 / 2;
+//
+//
+//        for (int i = 5; i < ints.length; i++) {
+//
+//            for (int j = i - 5; j >= 0; j -= 5) {
+//
+//                if (ints[j] > ints[j + 5]) {
+//                    temp = ints[j];
+//                    ints[j] = ints[j + 5];
+//                    ints[j + 5] = temp;
+//                }
+//
+//            }
+//        }
+//
+//        System.out.println(Arrays.toString(ints));
+//
+//        int b = (11 / 2) / 2;
+//
+//        for (int i = 2; i < ints.length; i++) {
+//
+//            for (int j = i - 2; j >= 0; j -= 2) {
+//                if (ints[j] > ints[j + 2]) {
+//                    temp = ints[j];
+//                    ints[j] = ints[j + 2];
+//                    ints[j + 2] = temp;
+//                }
+//
+//                System.out.println(Arrays.toString(ints));
+//
+//            }
+//        }
 
-
-        for (int i = 5; i < ints.length; i++) {
-
-            for (int j = i - 5; j >= 0; j -= 5) {
-
-                if (ints[j] > ints[j + 5]) {
-                    temp = ints[j];
-                    ints[j] = ints[j + 5];
-                    ints[j + 5] = temp;
-                }
-
-            }
-        }
-
-        System.out.println(Arrays.toString(ints));
-
-        int b = (11 / 2) / 2;
-
-        for (int i = 2; i < ints.length; i++) {
-
-            for (int j = i -2; j >= 0; j -= 2) {
-                if (ints[j] > ints[j + 2]) {
-                    temp = ints[j];
-                    ints[j] = ints[j + 2];
-                    ints[j + 2] = temp;
-                }
-
-            }
-        }
 
 
     }
