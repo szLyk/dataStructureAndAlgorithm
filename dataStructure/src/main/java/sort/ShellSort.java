@@ -139,7 +139,71 @@ public class ShellSort {
 //
 //            }
 //        }
+        int temp = 0;
+//
+//
+//        int step1 = 5;
+//        for (int i = 5; i < ints.length; i++) {
+//            for (int j = i - 5; j >= 0; j -= 5) {
+//                if ( ints[j] > ints[j + 5]) {
+//                    temp = ints[j + 5];
+//                    ints[j + 5] = ints[j];
+//                    ints[j] = temp;
+//                }
+//            }
+//        }
+//
+//
+//        for (int i = 2; i < ints.length; i++) {
+//            for (int j = i -2; j >= 0; j -= 2) {
+//                if (ints[j] > ints[j + 2]) {
+//                    temp = ints[j + 2];
+//                    ints[j + 2] = ints[j];
+//                    ints[j] = temp;
+//                }
+//            }
+//        }
+//
+//        for (int i = 1; i < ints.length; i++) {
+//            for (int j = i -1; j >= 0; j -= 1) {
+//                if (ints[j] > ints[j + 1]) {
+//                    temp = ints[j + 1];
+//                    ints[j + 1] = ints[j];
+//                    ints[j] = temp;
+//                }
+//            }
+//        }
 
+
+        for (int k = ints.length/2;k>0;k /= 2){
+            for (int i = k; i < ints.length; i++) {
+                for (int j = i -k; j >= 0; j -= k) {
+                    if (ints[j] > ints[j + k]) {
+                        temp = ints[j + k];
+                        ints[j + k] = ints[j];
+                        ints[j] = temp;
+                    }
+                }
+            }
+        }
+
+
+        // 增量gap, 并逐步地缩小增量
+        for (int gap = ints.length / 2; gap > 0; gap /= 2) {
+            // 从第gap个元素，逐个对其所在的组进行直接插入排序
+            for (int i = gap; i < ints.length; i++) {
+                int temp1 = ints[i];
+                int j = i;
+                if (ints[j-gap] > ints[j]){
+                    while (j-gap>=0 && ints[j-gap] > ints[j]){
+                        ints[i] = ints[j-i];
+                        j = j-gap;
+                    }
+                    ints[j] = temp;
+                }
+
+            }
+        }
 
 
     }
