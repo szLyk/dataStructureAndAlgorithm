@@ -82,48 +82,6 @@ public class QuickSort2 {
         }
 
 
-
-    }
-
-
-    public static void sort1(int[] ints,int left,int right){
-
-        int l = left;
-        int r = right;
-        int mid = ints[(l+r)/2];
-        int temp = 0;
-
-        while (l<r){
-
-            while (ints[l] > mid){
-                l +=1;
-            }
-
-            while (ints[r] < mid){
-                r +=1;
-            }
-
-
-            if (l >=r){
-                break;
-            }
-
-            temp = ints[l];
-            ints[l] = ints[r];
-            ints[r] = temp;
-
-
-            //如果交换完后，发现这个arr[l] == pivot值 相等 r--， 前移
-            if(ints[l] == mid) {
-                r -= 1;
-            }
-            //如果交换完后，发现这个arr[r] == pivot值 相等 l++， 后移
-            if(ints[r] == mid) {
-                l += 1;
-            }
-
-        }
-
     }
 
 }
