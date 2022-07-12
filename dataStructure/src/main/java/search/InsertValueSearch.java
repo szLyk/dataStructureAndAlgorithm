@@ -1,9 +1,11 @@
 package search;
 
+import java.util.ArrayList;
+
 public class InsertValueSearch {
     public static void main(String[] args) {
 
-        int arr[] = { 1, 8, 10, 89,1000,1000, 1234 };
+        int arr[] = {1, 8, 10, 89, 1000, 1000, 1234};
 
         int index = insertValueSearch(arr, 0, arr.length - 1, 1000);
         //int index = binarySearch(arr, 0, arr.length, 1);
@@ -12,11 +14,11 @@ public class InsertValueSearch {
 
     //编写插值查找算法
     //说明：插值查找算法，也要求数组是有序的
+
     /**
-     *
-     * @param arr 数组
-     * @param left 左边索引
-     * @param right 右边索引
+     * @param arr     数组
+     * @param left    左边索引
+     * @param right   右边索引
      * @param findVal 查找值
      * @return 如果找到，就返回对应的下标，如果没有找到，返回-1
      */
@@ -42,4 +44,5 @@ public class InsertValueSearch {
         }
 
     }
+
 }
