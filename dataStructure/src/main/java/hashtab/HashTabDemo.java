@@ -27,6 +27,8 @@ public class HashTabDemo {
 
         empLinkedList.update(emp7);
         empLinkedList.update(emp8);
+        empLinkedList.delete(10);
+        empLinkedList.delete(100);
         empLinkedList.show();
     }
 }
@@ -167,20 +169,32 @@ class EmpLinkedList {
         if (temp.id == id) {
             if (temp.next == null) {
                 list[point] = null;
-                System.out.println("id:" + id + "存在！删除成功！");
+
             } else {
                 list[point] = temp.next;
 
             }
+            System.out.println("id:" + id + "存在！删除成功！");
             return;
         }
 
         while (true) {
-
             if (temp.next != null) {
-                
+                if (temp.next.id == id && temp.next.next==null){
+                    temp.next = null;
+                    System.out.println("id:" + id + "存在！删除成功！");
+                    return;
+                }else if (temp.next.id == id){
+                    temp.next = temp.next.next;
+                    System.out.println("id:" + id + "存在！删除成功！");
+                    return;
+                }
 
+            }else {
+                System.out.println("没有找到对应id："+id);
+                return;
             }
+            temp = temp.next;
 
         }
 
