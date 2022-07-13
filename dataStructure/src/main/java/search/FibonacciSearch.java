@@ -12,7 +12,7 @@ public class FibonacciSearch {
         int[] arr1 = {2, 6, 17, 23, 42, 44, 51, 55, 75};
 
 //        System.out.println("index=" + fibSearch(arr, 89));// 0
-        System.out.println("index=" + fibSearch(arr1, 23));
+        System.out.println("index=" + fibSearch1(arr1, 23));
     }
 
     //因为后面我们mid=low+F(k-1)-1，需要使用到斐波那契数列，因此我们需要先获取到一个斐波那契数列
@@ -97,6 +97,51 @@ public class FibonacciSearch {
             }
         }
         return -1;
+    }
+
+
+    //自我练习
+    public static int fibSearch1(int[] a, int key) {
+
+        int[] fib = fib();
+        int low = 0;
+        int[] temp ;
+        int high = a.length -1;
+        int k = 0;
+        int mid =0;
+
+        while (high > fib[k] -1){
+            k++;
+        }
+
+        temp = Arrays.copyOf(a,fib[k]-1);
+
+        for (int i = high+1;i<temp.length;i++){
+            temp[i] = a[high];
+        }
+
+
+        while (low <= high){
+
+            mid = low + fib[k-1]-1;
+
+            if (temp[mid] > key){
+                high = mid-1;
+                k--;
+
+            }else if (temp[mid] < key){
+                low = mid+1;
+                k -=2;
+            }else {
+                if (mid <= high){
+                    return mid;
+                }else {
+                    return high;
+                }
+            }
+
+        }
+        return  -1;
     }
 
 }
