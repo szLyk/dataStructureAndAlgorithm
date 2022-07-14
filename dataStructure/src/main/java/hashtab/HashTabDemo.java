@@ -1,6 +1,5 @@
 package hashtab;
 
-import java.util.Arrays;
 
 public class HashTabDemo {
     public static void main(String[] args) {
@@ -29,7 +28,18 @@ public class HashTabDemo {
         empLinkedList.update(emp8);
         empLinkedList.delete(10);
         empLinkedList.delete(100);
+        empLinkedList.delete(119);
+        empLinkedList.delete(119);
         empLinkedList.show();
+
+
+        Emp emp = empLinkedList.find(119);
+
+        if (emp == null){
+            System.out.println("没有找到！");
+        }else {
+            System.out.println(emp);
+        }
     }
 }
 
@@ -195,6 +205,35 @@ class EmpLinkedList {
                 return;
             }
             temp = temp.next;
+
+        }
+    }
+
+    public Emp find(int id){
+
+        int point = id%10;
+        temp = list[point];
+
+        if (temp == null){
+            return null;
+        }
+
+        if (temp.id == id){
+            return temp;
+        }
+
+        temp = temp.next;
+
+        while (true){
+
+            if (temp != null){
+                if (temp.id == id){
+                    return temp;
+                }
+                temp = temp.next;
+            }else {
+                return null;
+            }
 
         }
 
