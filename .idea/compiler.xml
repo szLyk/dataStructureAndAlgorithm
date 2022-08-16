@@ -11,8 +11,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Algorithm" target="1.5" />
-      <module name="dataStructure" target="1.5" />
+      <module name="Algorithm" target="8" />
+      <module name="dataStructure" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
