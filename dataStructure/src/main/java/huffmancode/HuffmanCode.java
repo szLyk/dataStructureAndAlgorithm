@@ -5,12 +5,12 @@ import java.util.*;
 public class HuffmanCode {
 
     public static void main(String[] args) {
-        String context = "i like like like java do you like a java and you";
+        String context = "i like like like java do you like a java and u";
         byte[] bytes = context.getBytes();
         byte[] zip = zip(bytes);
 
         String s = unZip(zip);
-        System.out.println(s);
+        System.out.println("还原后: "+s);
 
 
     }
@@ -57,7 +57,7 @@ public class HuffmanCode {
         }
 
         String temp = sb.toString();
-        System.out.println("temp: "+temp);
+        System.out.println("temp:  "+temp);
         int count=0;
         String unzip = "";
 
@@ -96,7 +96,7 @@ public class HuffmanCode {
             huffmanCodeStringBuilder.append(s);
         }
 
-        System.out.println("压缩后："+huffmanCodeStringBuilder);
+        System.out.println("霍夫曼编码："+huffmanCodeStringBuilder);
         int len = huffmanCodeStringBuilder.length();
         byte[] bytesForHuffman;
         int index = 0;
@@ -136,7 +136,7 @@ public class HuffmanCode {
             stringBuffer.append(bytesForHuffman[i]+"\t");
         }
 
-        System.out.println("bytesForHuffman : "+stringBuffer);
+        System.out.println("压缩后 : "+stringBuffer);
 
 
         return bytesForHuffman;
